@@ -1,4 +1,4 @@
-module github.com/notkyloren/gocast
+module ren.local/gocast
 
 go 1.22.6
 

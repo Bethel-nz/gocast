@@ -6,14 +6,18 @@ import (
 	"os/signal"
 	"syscall"
 
-	"github.com/notkyloren/gocast/pkg/server"
+	"ren.local/gocast/pkg/server"
 )
 
 func main() {
 	config := server.DefaultConfig()
 
-	if err := os.MkdirAll(config.VideoDir, 0755); err != nil {
-		log.Fatal("Failed to create videos directory:", err)
+	// Check if directory exists first
+	if _, err := os.Stat(config.VideoDir); os.IsNotExist(err) {
+		log.Printf("Videos directory doesn't exist, creating '%s'...\n", config.VideoDir)
+		if err := os.MkdirAll(config.VideoDir, 0755); err != nil {
+			log.Fatal("Failed to create videos directory:", err)
+		}
 	}
 
 	// Initialize and start the server

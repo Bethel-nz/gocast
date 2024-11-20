@@ -13,9 +13,11 @@ import (
 	"strings"
 	"time"
 
-	"github.com/notkyloren/gocast/pkg/models"
 	"golang.org/x/time/rate"
+	"ren.local/gocast/pkg/models"
 )
+
+// supportedFormats range based on the host machine
 
 var supportedFormats = map[string]bool{
 	".mp4":  true,
@@ -27,9 +29,9 @@ var supportedFormats = map[string]bool{
 	".wmv":  true,
 	".m4v":  true,
 	".3gp":  true,
-	".ts":   true, // MPEG transport stream
-	".mts":  true, // AVCHD
-	".m2ts": true, // Blu-ray BDAV
+	".ts":   true,
+	".mts":  true,
+	".m2ts": true,
 }
 
 // Add this struct for the watch page template data

@@ -82,6 +82,5 @@ type StreamingMetrics struct {
 func (m *StreamingMetrics) RecordChunk(size int64, gap float64) {
 	atomic.AddInt64(&m.BytesServed, size)
 	atomic.AddInt64(&m.ChunksServed, 1)
-	// Update rolling average of prefetch gap
 	m.AveragePrefetchGap = (m.AveragePrefetchGap*float64(m.ChunksServed-1) + gap) / float64(m.ChunksServed)
 }

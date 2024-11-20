@@ -9,7 +9,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/notkyloren/gocast/pkg/models"
+	"ren.local/gocast/pkg/models"
 )
 
 func (s *VideoServer) streamVideo(conn *models.Connection, file *os.File, start, end int64) {

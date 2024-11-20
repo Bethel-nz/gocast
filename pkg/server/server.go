@@ -11,9 +11,9 @@ import (
 	"sync"
 	"time"
 
-	"github.com/notkyloren/gocast/pkg/models"
-	"github.com/notkyloren/gocast/pkg/templates"
 	"golang.org/x/time/rate"
+	"ren.local/gocast/pkg/models"
+	"ren.local/gocast/pkg/templates"
 )
 
 // VideoServer represents the main server structure
